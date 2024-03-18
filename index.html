@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Storage</title>
+    <title>Voucher Gallery</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Dunnes - Valid Vouchers </h1>
+        <h1>Voucher Gallery</h1>
         <div class="gallery">
             <div class="photo">
-                <img src="images/voucher-26thExpiry.jpeg" alt="Photo 1">
-                <p class="caption">Available</p>
+                <img src="images/voucher1.jpg" alt="Voucher 1">
+                <div class="actions">
+                    <label for="voucher1_status">Status:</label>
+                    <select id="voucher1_status" class="status-dropdown">
+                        <option value="unused">Unused</option>
+                        <option value="used">Used</option>
+                    </select>
+                </div>
             </div>
             <div class="photo">
-                <img src="images/photo2.jpeg" alt="Photo 2">
-                <p class="caption">Will be added after cutting the Cake</p>
+                <img src="images/voucher2.jpg" alt="Voucher 2">
+                <div class="actions">
+                    <label for="voucher2_status">Status:</label>
+                    <select id="voucher2_status" class="status-dropdown">
+                        <option value="unused">Unused</option>
+                        <option value="used">Used</option>
+                    </select>
+                </div>
             </div>
             <!-- Add more photo entries as needed -->
         </div>
     </div>
+
+    <script>
+        function markAsUsed(photoId) {
+            var selectElement = document.getElementById(photoId).querySelector('.mark-used');
+            var selectedValue = selectElement.options[selectElement.selectedIndex].value;
+            
+            // Here you can perform actions based on the selected value
+            if (selectedValue === 'used') {
+                alert('Voucher marked as used!');
+                // You can also perform further actions like sending this information to a server
+            }
+        }
+    </script>
 </body>
 </html>
